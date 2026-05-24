@@ -180,19 +180,19 @@ textarea{resize:vertical;min-height:66px;line-height:1.4}
           </div>
         </div>
         <label>Full name</label>
-        <input id="fullName" placeholder="e.g. Roberto Cimmino" oninput="render()">
+        <input id="fullName" placeholder="e.g. John Smith" oninput="render()">
         <label>Job title</label>
-        <input id="jobTitle" placeholder="e.g. Director of Food & Beverage" oninput="render()">
+        <input id="jobTitle" placeholder="e.g. Marketing Manager" oninput="render()">
         <div class="row2">
           <div><label>Email</label><input id="email" placeholder="you@email.com" oninput="render()"></div>
           <div><label>Phone</label><input id="phone" placeholder="+66 ..." oninput="render()"></div>
         </div>
         <div class="row2">
-          <div><label>Location</label><input id="location" placeholder="Bangkok, Thailand" oninput="render()"></div>
+          <div><label>Location</label><input id="location" placeholder="City, Country" oninput="render()"></div>
           <div><label>LinkedIn / web</label><input id="linkedin" placeholder="linkedin.com/in/..." oninput="render()"></div>
         </div>
         <label>Profile summary</label>
-        <textarea id="summary" placeholder="2–3 sharp lines. Who you are, what you bring, what you're targeting." oninput="render()"></textarea>
+        <textarea id="summary" placeholder="e.g. Results-driven professional with 10+ years experience in operations and team leadership." oninput="render()"></textarea>
       </div>
       <div class="fsec">
         <div class="fsec-title">Experience</div>
@@ -207,11 +207,11 @@ textarea{resize:vertical;min-height:66px;line-height:1.4}
       <div class="fsec">
         <div class="fsec-title">Skills, languages & certifications</div>
         <label>Skills (comma separated)</label>
-        <input id="skills" placeholder="Menu engineering, P&L, RevPASH, HACCP, Opera PMS" oninput="render()">
+        <input id="skills" placeholder="e.g. Project management, Excel, Public speaking" oninput="render()">
         <label>Languages (comma separated)</label>
-        <input id="langs" placeholder="Italian (native), English (fluent), Thai (basic)" oninput="render()">
+        <input id="langs" placeholder="e.g. English (native), Spanish (fluent)" oninput="render()">
         <label>Certifications / awards (one per line)</label>
-        <textarea id="certs" rows="3" placeholder="WSET Level 3&#10;Forbes Five-Star team 2022" oninput="render()"></textarea>
+        <textarea id="certs" rows="3" placeholder="e.g. PMP Certificationplaceholder="WSET Level 3&#10;Forbes Five-Star team 2022"#10;Employee of the Year 2022" oninput="render()"></textarea>
       </div>
     </div>
   </div>
@@ -319,10 +319,10 @@ function addExp(){
   const id='e'+(++expCount);expData.push({id,org:'',role:'',start:'',end:'',desc:''});
   const d=document.createElement('div');d.className='entry-card';d.id='blk-'+id;
   d.innerHTML=`<button class="rm-btn" onclick="rmExp('${id}')">×</button>
-    <label>Company / hotel</label><input placeholder="e.g. Rosewood Bangkok" oninput="upExp('${id}','org',this.value)">
-    <label>Role / title</label><input placeholder="e.g. Director of Food & Beverage" oninput="upExp('${id}','role',this.value)">
+    <label>Company / hotel</label><input placeholder="e.g. Acme Corporation" oninput="upExp('${id}','org',this.value)">
+    <label>Role / title</label><input placeholder="e.g. Marketing Manager" oninput="upExp('${id}','role',this.value)">
     <div class="row2"><div><label>From</label><input placeholder="Jan 2020" oninput="upExp('${id}','start',this.value)"></div><div><label>To</label><input placeholder="Present" oninput="upExp('${id}','end',this.value)"></div></div>
-    <label>Key achievements</label><textarea placeholder="Specific results with numbers. Led team of 80, grew revenue 34% YoY." oninput="upExp('${id}','desc',this.value)"></textarea>`;
+    <label>Key achievements</label><textarea placeholder="e.g. Managed team of 15, reduced costs by 20%, launched new product line." oninput="upExp('${id}','desc',this.value)"></textarea>`;
   document.getElementById('expBlocks').appendChild(d);render();
 }
 function upExp(id,k,val){const e=expData.find(x=>x.id===id);if(e){e[k]=val;render();}}
@@ -332,8 +332,8 @@ function addEdu(){
   const id='u'+(++eduCount);eduData.push({id,org:'',role:'',start:'',end:''});
   const d=document.createElement('div');d.className='entry-card';d.id='blk-'+id;
   d.innerHTML=`<button class="rm-btn" onclick="rmEdu('${id}')">×</button>
-    <label>Institution</label><input placeholder="e.g. ALMA – The Italian Culinary School" oninput="upEdu('${id}','org',this.value)">
-    <label>Degree / qualification</label><input placeholder="e.g. MBA in Hospitality Management" oninput="upEdu('${id}','role',this.value)">
+    <label>Institution</label><input placeholder="e.g. University of London" oninput="upEdu('${id}','org',this.value)">
+    <label>Degree / qualification</label><input placeholder="e.g. BSc Business Administration" oninput="upEdu('${id}','role',this.value)">
     <div class="row2"><div><label>From</label><input placeholder="2006" oninput="upEdu('${id}','start',this.value)"></div><div><label>To</label><input placeholder="2008" oninput="upEdu('${id}','end',this.value)"></div></div>`;
   document.getElementById('eduBlocks').appendChild(d);render();
 }
